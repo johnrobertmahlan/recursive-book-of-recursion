@@ -50,4 +50,26 @@ The problem is that we *also* must perform these calculations for fibonacci(9). 
 
 Thus, the problem with the recursive Fibonacci function is that it has *two* recursive calls, which leads to a massive amount of redundancy as each recursive call works its way down to the base case. This makes the function highly inefficient.
 
-7.
+7. *What does an iterative algorithm always use?*
+
+An iterative algorithm always uses a *loop*.
+
+8. *Is it always possible to convert an iterative algorithm into a recursive one?*
+
+Yes.
+
+9. *Is it always possible to convert a recursive algorithm into an iterative one?*
+
+Yes.
+
+10. *Any recursive algorithm can be performed iteratively by using what two things?*
+
+A recursive algorithm can be re-written as an iterative algorithm by making use of two things: (a) a *loop* and (b) a *stack* data structure such as an array. The stack data structure mimics the *call stack*, while the loop mimics the recursive function calls of the recursive algorithm.
+
+11. *What three features do programming problems that are suitable to recursive solutions have?*
+
+Typically, a programming problem is suitable to a recursive solution if the following three conditions obtain: (a) it has a *tree-like* structure, (b) it involves *backtracking*, and (c) it is not likely to cause a stack overflow.
+
+12. *When is recursion required to solve a programming problem?*
+
+Never. Any problem that can be solved with recursion *can* be solved iteratively. But some scenarios are better-suited for recursive solutions than others, and in these cases a recursive solution is *preferred*, but not *required*.
