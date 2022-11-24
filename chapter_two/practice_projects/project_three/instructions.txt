@@ -1,0 +1,5 @@
+Iteratively calculate the sum of the first n powers of 2 in a function named sumPowersOf2().
+
+The powers of 2 are 2, 4, 8, 16, 32, and so on. In Python, these are calculated with 2 ** 1, 2 ** 2, 2 ** 3, 2 ** 4, 2 ** 5, and so on, respectively. In JavaScript, these are calculated with Math.pow(2, 1), Math.pow(2, 2), and so on.
+
+For example, sumPowersOf2(1) returns 2, sumPowersOf2(2) returns 6 (that is, 2 + 4), sumPowersOf2(3) returns 14 (that is, 2 + 4 + 8), and so on.
