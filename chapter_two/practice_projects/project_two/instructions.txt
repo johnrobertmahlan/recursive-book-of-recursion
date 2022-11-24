@@ -1,0 +1,3 @@
+Write the recursive form of sumSeries() [the function from project one].
+
+This function should use recursive function calls instead of a loop. Look at the factorialByRecrusion.py program in this chapter for guidance.
