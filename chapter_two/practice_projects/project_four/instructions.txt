@@ -1,0 +1,1 @@
+Write the recursive form of sumPowersOf2() [the function from project three]. This function should use recursive function calls instead of a loop.
