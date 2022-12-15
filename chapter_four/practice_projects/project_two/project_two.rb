@@ -1,7 +1,7 @@
 def add_one_level_to_tree(node)
   if node['children'].empty?
     new_data = "NEW NODE!"
-    new_node = {'data': new_data}
+    new_node = {'data' => new_data, 'children' => []}
     node['children'].push(new_node)
     return
   else
@@ -9,6 +9,20 @@ def add_one_level_to_tree(node)
       add_one_level_to_tree(child)
     end
   return
+  end
+end
+
+def get_depth(node)
+  if node['children'].empty?
+    return 0
+  else
+    max_depth = 0
+    node['children'].each do |child|
+      child_depth = get_depth(child)
+      max_depth = child_depth if child_depth > max_depth
+    end
+
+    return max_depth + 1
   end
 end
 
@@ -35,7 +49,13 @@ puts "Here is the original root:\n\n"
 puts root
 puts "\n\n"
 
+puts "Here is the original depth of the tree:\n\n"
+puts get_depth(root)
+
 add_one_level_to_tree(root)
 
 puts "Here is the new root:\n\n"
 puts root
+
+puts "Here is the new depth of the tree:\n\n"
+puts get_depth(root)
