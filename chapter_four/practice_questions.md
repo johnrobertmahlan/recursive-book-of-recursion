@@ -45,3 +45,85 @@ No. Such a graph is *cyclic*, not *acyclic*. Therefore, it is not a DAG.
 9. *What is backtracking in a tree traversal algorithm?*
 
 Backtracking in a tree traversal algorithm is moving *up* the tree *from the leaves to their parents*, ultimately culminating back at the root. Backtracking occurs when one has traversed all the way down the descendants of the root node until one has reached a leaf node (i.e., a node without any children). At this point, we have hit the base case and we *return* instead of calling the recursive function.
+
+10. *For the following tree traversal problems, you can use the Python/JavaScript code in "A Tree Data Structure in Python and JavaScript" in Chapter 4 for your tree and the multiline MAZE string from the mazeSolver.py and mazeSolver.html programs for the maze data.*
+
+*Answer the three questions about recursive solutions for each of the recursive algorithms presented in this chapter. Then re-create the recursive algorithms from this chapter without looking at the original code.*
+
+I am not going to do this for the maze, at least right now (12/15/22). It's not really necessary for what I'm trying to learn. But the preorder, postorder, and inorder tree traversals are very important, so I will use those.
+
+### Preorder Tree Traversal ###
+
+*What is the base case?*
+
+The base case for any tree traversal algorithm is a *leaf* node, that is, any node that does not have children of its own.
+
+*What argument is passed to the recursive function call?*
+
+If the node we are currently considering is *not* a leaf node, then we move to the recursive case. Here we call the tree traversal algorithm on *each of the children of the current node*. For example, if we are examining node A, and node A has two children - nodes B and C - then we will call our tree traversal algorithm on both B and C in the recursive case. We will likewise call the algorithm on any of the children of B and C, until we hit our base case.
+
+*How does this argument become closer to the base case?*
+By moving from a node to its children in the recursive case, we keep moving until we hit a leaf node (i.e., a node with no children of its own). We get closer to this simply by moving "down" the tree from parent to child.
+
+Here is the preorder traversal algorithm:
+
+```ruby
+def preorder_traversal(node)
+  puts node[:data]
+
+  if node['children'].count > 0
+    node['children'].each do |child|
+      preorder_traversal(child)
+    end
+  end
+
+  return
+end
+```
+
+### Postorder Tree Traversal ###
+
+*What is the base case?*
+
+As with preorder tree traversals, the base case is when we reach a leaf node.
+
+*What argument is passed to the recursive function call?*
+
+Again as with preorder tree traversals, the argument passed to the recursive function call is simple: for whatever node we are considering, we pass each of its children in as an argument to the recursive function call.
+
+*How does this argument become closer to the base case?*
+
+Again, by moving from a node to its children in the recursive case, we keep moving until we hit a leaf node (i.e., a node with no children of its own). We get closer to this simply by moving "down" the tree from parent to child.
+
+Here is the postorder traversal algorithm:
+
+```ruby
+def postorder_traversal(node)
+  node['children'].each do |child|
+    postorder_traversal(child)
+  end
+  puts node[:data]
+end
+```
+
+### Inorder Tree Traversal ###
+
+The answers to our three questions are the same as with preorder and postorder. The only difference here is that we focus on going to the "left" before going to the "right".
+
+Here's the algorithm:
+
+```ruby
+def inorder_traversal(node)
+  if node['children'].empty?
+    puts node[:data]
+  end
+  if node['children'].count >= 1
+    inorder_traversal(node['children'][0])
+    puts node[:data]
+  end
+  if node['children'].count >= 2
+    inorder_traversal(node['children'][1])
+  end
+  return
+end
+```
