@@ -52,6 +52,8 @@ Backtracking in a tree traversal algorithm is moving *up* the tree *from the lea
 
 I am not going to do this for the maze, at least right now (12/15/22). It's not really necessary for what I'm trying to learn. But the preorder, postorder, and inorder tree traversals are very important, so I will use those.
 
+EDIT TO ADD: I did not manage to do these from memory. I knew what each algorithm needed to do *in outline*, but needed to refer back to the chapter to get each one to work precisely as intended. It seems to me that this is acceptable, however, since the goal here is *understanding* rather than *memorization*. I also did have to modify the inorder traversal algorithm to get it to work, so I feel confident that my understanding of how to traverse trees of the sort outlined in this chapter has improved. I do still need to think more about trees *in general* and their relationship to *graphs*. For this, I'll need to re-read Thomas Cormen.
+
 ### Preorder Tree Traversal ###
 
 *What is the base case?*
